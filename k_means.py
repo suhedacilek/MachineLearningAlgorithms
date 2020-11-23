@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # %% create dataset
 
-x1 = np.random.normal(25,5,1000) #normal Gaussian demek. 25 ortlamaya sahip 5 sigmaya sahip 1000 tane değer üret.
+x1 = np.random.normal(25,5,1000) 
 y1 = np.random.normal(25,5,1000)
 
 x2 = np.random.normal(55,5,1000)
@@ -47,9 +47,9 @@ wcss = []
 for k in range (1,15):
     kmeans = KMeans(n_clusters = k)
     kmeans.fit(data)
-    wcss.append(kmeans.inertia_) #wcss metricinin içine kmeans.inertia_ sını içine depola. İnertia = her bir k degeri icin wcss degerini bul demek.
+    wcss.append(kmeans.inertia_) 
     
-plt.plot(range(1,15),wcss) #x degerlerim 1 den 15 e kadar, y degerlerim wcss degerlerim.
+plt.plot(range(1,15),wcss) 
 plt.xlabel("number of k (cluster) value")
 plt.ylabel("wcss")
 plt.show()
@@ -64,7 +64,7 @@ data["label"] = clusters
 plt.scatter(data.x[data.label == 0], data.y[data.label == 0], color = "red")
 plt.scatter(data.x[data.label == 1], data.y[data.label == 1], color = "green")
 plt.scatter(data.x[data.label == 2], data.y[data.label == 2], color = "blue")
-plt.scatter(kmeans2.cluster_centers_[:,0], kmeans2.cluster_centers_[:,1], color = "yellow") # 2 boyutlu birseydir. Centroidimiz 0 ıncı x ekseni 1, y ekseni.
+plt.scatter(kmeans2.cluster_centers_[:,0], kmeans2.cluster_centers_[:,1], color = "yellow") 
 plt.show()
 plt.savefig("centroid.png")
 
